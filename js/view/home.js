@@ -3,7 +3,11 @@ define(function() {
     var internals = {};
     var externals = {};
     
-    externals.show = function(onClick){
+    externals.show = function(onClick, allPokemons){
+
+        $("#allPokemonsBtn").show();
+        $("#moreBtn").hide();
+        $("#homeBtn").hide();
 
         $("#loading").show();
         $("#app").hide();
@@ -15,6 +19,9 @@ define(function() {
             $('#search-btn').click(function(){
                 var pokemon = $("#name-input").val();
                 onClick(pokemon);
+            })
+            $('#allPokemonsBtn').click(function(){
+                allPokemons();
             })
             $(document).ready(function(){
                 $("#loading").hide();

@@ -19,8 +19,12 @@ define(['view/home', 'service/fetch'], function(homeView, fetch){
         window.location.hash = "details";
     }
 
+    internals.allPokemons = function(){
+        window.location.hash = "allPokemons";
+    }
+
     externals.init = function() {
-        homeView.show(internals.reRoute);
+        homeView.show(internals.reRoute, internals.allPokemons);
     }
 
     return externals;

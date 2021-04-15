@@ -20,9 +20,13 @@ define(function(){
             })
     }
 
+    externals.resetOffSet = function(){
+        internals.offset = 0;
+    }
+
     externals.fetchAll = function(cb){
-        var API = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=" + internals.offset;
-        internals.offset += 10;
+        var API = "https://pokeapi.co/api/v2/pokemon?limit=9&offset=" + internals.offset;
+        internals.offset += 9;
 
         return fetch(API)
                     .then(function(response){
@@ -35,6 +39,15 @@ define(function(){
 
     externals.init = function(pokemon, cb, success) {
         internals.fetch(pokemon, cb, success);
+    }
+
+    externals.search = function(pokemon){
+        var API = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+
+        return fetch(API)
+                    .then(function(response){
+                        return response.json();
+                    })
     }
 
     return externals;

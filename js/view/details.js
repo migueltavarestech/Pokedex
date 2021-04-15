@@ -5,8 +5,13 @@ define(function() {
 
     externals.show = function(reload, pokemonData, home, allPokemons){
         
+        $("#allPokemonsBtn").show();
+        $("#moreBtn").hide();
+        $("#homeBtn").hide();
+
         $("#loading").show();
         $("#app").hide();
+
         console.log(pokemonData);
 
         $.get("./snippets/details.html", function(response){

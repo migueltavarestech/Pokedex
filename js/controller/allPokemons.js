@@ -15,12 +15,16 @@ define(['view/allPokemons', 'controller/home', 'service/fetch'], function(allPok
         return fetch.fetchAll(internals.setPokemon);
     }
 
+    internals.search = function(pokemon){
+        return fetch.search(pokemon);
+    }
+
     internals.home = function(){
         window.location.hash = "home";
     }
 
     externals.init = function() {
-        allPokemonsView.show(internals.fetchAll, internals.home, internals.search, internals.getPokemon);
+        allPokemonsView.show(internals.fetchAll, internals.home, internals.search, internals.getPokemon, fetch.resetOffSet);
     }
 
     return externals;
