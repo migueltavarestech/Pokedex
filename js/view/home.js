@@ -8,7 +8,7 @@ define(function() {
         $("#loading").show();
         $("#app").hide();
 
-        $.get("/snippets/home.html", function(response){
+        $.get("./snippets/home.html", function(response){
             $("#app")
                 .empty()
                 .append($(response));

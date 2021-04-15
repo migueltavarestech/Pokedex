@@ -8,11 +8,11 @@ define(function() {
         $("#app").hide();
         console.log(pokemonData);
 
-        $.get("/snippets/details.html", function(response){
+        $.get("./snippets/details.html", function(response){
             $("#app").empty();
             $("#app").append($(response));
 
-            $.get("/snippets/right-panel.html", function(data){
+            $.get("./snippets/right-panel.html", function(data){
                 $("#right-panel").empty();
                 $("#right-panel").append($(data));
                 $('#closeBtn').click(function(){
