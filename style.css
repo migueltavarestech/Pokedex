@@ -47,6 +47,13 @@
     align-items: center;
     background-color: var(--secondary-bg-color);
   }
+
+  .center-content {
+    justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .logo {
     justify-self: start;
@@ -107,6 +114,7 @@
     cursor: pointer;
     animation-play-state: running;
   }
+
   .upper-half-ball {
     position: absolute;
     width: 100%;

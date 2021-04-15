@@ -22,6 +22,12 @@ define(function() {
                     var pokemon = $("#name-input").val();
                     reload(pokemon);
                 })
+                $('#nextBtn').click(function(){
+                    reload(pokemonData.id+1);
+                })
+                $('#previousBtn').click(function(){
+                    reload(pokemonData.id-1);
+                })
 
                 if(pokemonData !== undefined){
                     $('#name-screen').text(pokemonData.name);
