@@ -683,6 +683,10 @@
     margin-left: 10px;
   }
 
+.mr-3 {
+  margin-right: 10px;
+}
+
 .mt-3 {
     margin-top: 10px;
 }
@@ -705,4 +709,15 @@
 
 .pokemon-square:hover {
   transform: scale(1.2);
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+}
+
+.button {
+  background-color: #fe0065;
+  width: 100px;
+  height: 30px;
 }

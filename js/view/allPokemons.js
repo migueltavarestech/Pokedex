@@ -5,22 +5,26 @@ define(function() {
 
     internals.id = 1;
     
-    externals.show = function(fetchAll, home, search, pokemonData, resetOffSet){
-
-        internals.id = 1;
-        resetOffSet();
-
+    internals.buttonEvents = function(){
         $("#allPokemonsBtn").hide();
         $("#moreBtn").show();
         $("#homeBtn").show();
 
         $("#loading").show();
         $("#app").hide();
+    }
+
+    externals.show = function(fetchAll, home, search, pokemonData, resetOffSet){
+
+        internals.id = 1;
+        resetOffSet();
+
+        internals.buttonEvents();
 
         fetchAll()
             .then(function(){
                 internals.loadPage(pokemonData(), search);
-            }); // set Pokemon
+            });
 
         $('#moreBtn').click(function(){
             fetchAll()
@@ -69,9 +73,9 @@ define(function() {
         var idToAdd = internals.id;
 
         for(var i=0; i<3; i++){
-            square1 = "<td id='pokemon-" + (idToAdd) + "' class='pokemon-square'></td>";
-            square2 = "<td id='pokemon-" + (idToAdd+1) + "' class='pokemon-square'></td>";
-            square3 = "<td id='pokemon-" + (idToAdd+2) + "' class='pokemon-square'></td>";
+            var square1 = "<td id='pokemon-" + (idToAdd) + "' class='pokemon-square'></td>";
+            var square2 = "<td id='pokemon-" + (idToAdd+1) + "' class='pokemon-square'></td>";
+            var square3 = "<td id='pokemon-" + (idToAdd+2) + "' class='pokemon-square'></td>";
             
             $("#myTable")
                 .append("<tr>" + square1 + square2 + square3 + "</tr>");
