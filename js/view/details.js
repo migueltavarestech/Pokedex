@@ -13,6 +13,7 @@ define(function() {
             $("#app").append($(response));
 
             $.get("/snippets/right-panel.html", function(data){
+                $("#right-panel").empty();
                 $("#right-panel").append($(data));
                 $('#closeBtn').click(function(){
                     home();
