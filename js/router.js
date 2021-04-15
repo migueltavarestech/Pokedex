@@ -5,7 +5,8 @@ define(function(){
 
     internals.routes = {
         home: { hash: '#home', controller: 'home' },
-        details: { hash: '#details', controller: 'details'}
+        details: { hash: '#details', controller: 'details'},
+        allPokemons: { hash: '#allPokemons', controller: 'allPokemons'}
     }
 
     internals.defaultRoute = internals.routes.home;

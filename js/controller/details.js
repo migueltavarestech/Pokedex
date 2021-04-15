@@ -11,8 +11,12 @@ define(['view/details', 'controller/home', 'service/fetch'], function(detailsVie
         window.location.hash = "home";
     }
 
+    internals.allPokemons = function(){
+        window.location.hash = "allPokemons";
+    }
+
     externals.init = function() {
-        detailsView.show(internals.reload, homeController.getPokemon(), internals.home);
+        detailsView.show(internals.reload, homeController.getPokemon(), internals.home, internals.allPokemons);
     }
 
     return externals;
